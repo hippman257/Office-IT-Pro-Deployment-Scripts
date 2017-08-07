@@ -1503,6 +1503,7 @@ function officeGetLanguages() {
 
 }
 
+
 function GetLanguagePacks {
     Param(
        [Parameter(ValueFromPipelineByPropertyName=$true)]
@@ -1538,6 +1539,7 @@ function GetLanguagePacks {
             if($DisplayName -match "Language Pack" -and $DisplayName -notmatch "Service Pack" `
                                                    -and $DisplayName -notmatch "Portable Library" `
                                                    -and $DisplayName -notmatch "Visual Studio" `
+                                                   -and $DisplayName -notmatch "ReportViewer" `
                                                    -and $DisplayName -notmatch "Foundation Server" ){
                 $languageId = $regProv.GetStringValue($HKLM, $path, "ShellUITransformLanguage").sValue
 
